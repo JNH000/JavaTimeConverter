@@ -20,7 +20,7 @@ public class Interface {
 
     private JFrame jFrame = new JFrame();
     private JPanel jPanel = new JPanel();
-    private JLabel uiText = new JLabel("", SwingConstants.CENTER);
+    public static JLabel uiText = new JLabel("", SwingConstants.CENTER);
 
     private Time time = new Time();
 
@@ -33,7 +33,6 @@ public class Interface {
 
         uiText.setFont(new Font("Verdana", 1, 50));
         uiText.setForeground(textColor);
-        UpdateText();
         jPanel.setOpaque(false);
         jPanel.add(uiText);
         jFrame.add(jPanel);
@@ -45,9 +44,7 @@ public class Interface {
         jFrame.setVisible(true);
     }
 
-    public void UpdateText(){
-        uiText.setText(time.GetCurrentDateTimeActionPerformed());
-    }
+
 
 
 }
