@@ -4,37 +4,42 @@ import system.SystemManager;
 import system.Time;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class Interface {
 
     public static Color uiColor = new Color(0x1e2733);
     public static Color textColor = new Color(0x7ca296);
+    public static Color btnColor = new Color(0x496c88);
 
     private static String version = "v.0.0.1";
+    String[] timeZones = {"GMT", "UTC", "EST", "CST", "PST", "CAT", "..."};
 
     private JFrame jFrame = new JFrame();
     private JPanel jPanel = new JPanel();
     public static JLabel uiText = new JLabel("", SwingConstants.CENTER);
+    private JComboBox<String> jComboBox = new JComboBox<>(timeZones);
+
 
     private Time time = new Time();
 
 
     public Interface(){
-        jFrame.setLayout(new GridBagLayout());
+        jPanel.setLayout(new BorderLayout());
         jFrame.getContentPane().setBackground(uiColor);
 
-        jFrame.setTitle("Java Time Converter" + version);
+        jFrame.setTitle("Java Time Converter " + version);
+
+        jComboBox.setBounds(80, 59, 140, 20);
+        jComboBox.setBackground(uiColor);
+        jComboBox.setFont(new Font("Verdana", 1, 20));
+        jComboBox.setForeground(textColor);
 
         uiText.setFont(new Font("Verdana", 1, 50));
         uiText.setForeground(textColor);
         jPanel.setOpaque(false);
-        jPanel.add(uiText);
+        jPanel.add(jComboBox, BorderLayout.PAGE_END);
+        jPanel.add(uiText, BorderLayout.CENTER);
         jFrame.add(jPanel);
 
         jFrame.setSize(400,400);
