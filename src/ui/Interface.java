@@ -1,6 +1,7 @@
 package ui;
 
 import system.SystemManager;
+import system.Time;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -8,6 +9,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class Interface {
 
@@ -18,7 +20,9 @@ public class Interface {
 
     private JFrame jFrame = new JFrame();
     private JPanel jPanel = new JPanel();
-    private JLabel uiText = new JLabel("10:46am", SwingConstants.CENTER);
+    private JLabel uiText = new JLabel("", SwingConstants.CENTER);
+
+    private Time time = new Time();
 
 
     public Interface(){
@@ -29,6 +33,7 @@ public class Interface {
 
         uiText.setFont(new Font("Verdana", 1, 50));
         uiText.setForeground(textColor);
+        UpdateText();
         jPanel.setOpaque(false);
         jPanel.add(uiText);
         jFrame.add(jPanel);
@@ -39,4 +44,10 @@ public class Interface {
         jFrame.setResizable(false);
         jFrame.setVisible(true);
     }
+
+    public void UpdateText(){
+        uiText.setText(time.GetCurrentDateTimeActionPerformed());
+    }
+
+
 }
