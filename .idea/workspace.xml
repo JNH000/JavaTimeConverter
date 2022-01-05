@@ -29,7 +29,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SystemManager">
+    <configuration name="SystemManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="system.SystemManager" />
+      <module name="JavaTimeConverter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main" />
       <module name="JavaTimeConverter" />
@@ -39,6 +52,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SystemManager" />
         <item itemvalue="Application.main" />
       </list>
     </recent_temporary>
