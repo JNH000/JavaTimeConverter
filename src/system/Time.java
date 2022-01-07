@@ -6,7 +6,8 @@ import javax.swing.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.Executor;
+import java.util.Locale;
+import java.util.TimeZone;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -22,8 +23,10 @@ public class Time{
                 SwingUtilities.invokeLater(new Runnable(){
                     @Override
                     public void run() {
-                        DateFormat dateAndTime = new SimpleDateFormat("HH:mm:ss");
+                        DateFormat dateAndTime = new SimpleDateFormat("HH:mm:ss", Locale.GERMAN);
                         Date date = new Date();
+                        TimeZone timeZone = TimeZone.getTimeZone(Interface.getSelection());
+                        dateAndTime.setTimeZone(timeZone);
                         Interface.uiText.setText(dateAndTime.format(date));
                     }
 

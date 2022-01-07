@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="060b3152-2ed3-4d81-86ec-858880cdfad3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaTimeConverter/system/Time$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaTimeConverter/system/Time$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaTimeConverter/system/Time$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaTimeConverter/system/Time$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaTimeConverter/system/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaTimeConverter/system/Time.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaTimeConverter/ui/Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaTimeConverter/ui/Interface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/system/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/system/Time.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Interface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +24,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,5 +83,16 @@
       <updated>1641374706980</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
