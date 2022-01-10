@@ -23,11 +23,15 @@ public class Time{
                 SwingUtilities.invokeLater(new Runnable(){
                     @Override
                     public void run() {
-                        DateFormat dateAndTime = new SimpleDateFormat("HH:mm:ss", Locale.GERMAN);
+                        DateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
+                        DateFormat dateFormat = new SimpleDateFormat("EEE, MMM d");
                         Date date = new Date();
+                        Date date1 = new Date();
                         TimeZone timeZone = TimeZone.getTimeZone(Interface.getSelection());
-                        dateAndTime.setTimeZone(timeZone);
-                        Interface.uiText.setText(dateAndTime.format(date));
+                        timeFormat.setTimeZone(timeZone);
+                        dateFormat.setTimeZone(timeZone);
+                        Interface.uiText.setText(timeFormat.format(date));
+                        Interface.uiTextSmall.setText(dateFormat.format(date1));
                     }
 
                 });
