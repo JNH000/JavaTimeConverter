@@ -3,11 +3,13 @@ package ui;
 import system.Time;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Interface {
+public class Interface{
 
     private static final Color uiColor = new Color(0x1e2733);
     private static final Color textColor = new Color(0x7ca296);
@@ -19,18 +21,16 @@ public class Interface {
             "PST", "PNT", "MST", "CST", "EST", "CNT", "AGT", "BET", "CAT"};
 
     private final JFrame jFrame = new JFrame();
-    private final JPanel jPanel = new JPanel();
     public static JLabel uiText = new JLabel("", SwingConstants.CENTER);
     public static JLabel uiTextSmall = new JLabel("", SwingConstants.CENTER);
     private static JComboBox <String> jComboBox = new JComboBox<>(timeZones);
-
 
     private Time time = new Time();
 
 
     public Interface(){
-        jPanel.setLayout(new BorderLayout());
         jFrame.getContentPane().setBackground(uiColor);
+
 
         jFrame.setTitle("Java Time Converter " + version);
 
@@ -49,17 +49,37 @@ public class Interface {
         uiText.setForeground(textColor);
         uiTextSmall.setFont(new Font("Verdana", 1, 20));
         uiTextSmall.setForeground(textColor);
-        jPanel.setOpaque(false);
-        jPanel.add(jComboBox, BorderLayout.PAGE_END);
-        jPanel.add(uiText, BorderLayout.CENTER);
-        jPanel.add(uiTextSmall, BorderLayout.NORTH);
-        jFrame.add(jPanel);
+        jFrame.add(createTextJPanel(uiText, uiTextSmall), BorderLayout.CENTER);
+        jFrame.add(createDropdownJPanel(jComboBox), BorderLayout.SOUTH);
 
         jFrame.setSize(400,400);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setResizable(false);
         jFrame.setVisible(true);
+    }
+
+
+
+    private JPanel createTextJPanel(JLabel uiText, JLabel uiTextSmall){
+        JPanel panel = new JPanel(new BorderLayout());
+
+        panel.setOpaque(false);
+
+        panel.add(uiText, BorderLayout.CENTER);
+        panel.add(uiTextSmall, BorderLayout.NORTH);
+
+        return panel;
+    }
+
+    private JPanel createDropdownJPanel(JComboBox jComboBox){
+        JPanel panel = new JPanel(new BorderLayout());
+
+        panel.setOpaque(false);
+
+        panel.add(jComboBox, BorderLayout.SOUTH);
+
+        return panel;
     }
 
 
