@@ -1,15 +1,19 @@
 package ui;
 
+//region Imports
 import system.Time;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//endregion
+
 public class Interface{
+
+
+    //region Variables
 
     private static final Color uiColor = new Color(0x1e2733);
     private static final Color textColor = new Color(0x7ca296);
@@ -27,13 +31,24 @@ public class Interface{
 
     private Time time = new Time();
 
+    //endregion
 
     public Interface(){
-        jFrame.getContentPane().setBackground(uiColor);
+        createJComboBox();
+        createText();
+        createJFrame();
+    }
 
+    //region UI Setup
 
-        jFrame.setTitle("Java Time Converter " + version);
+    private void createText(){
+        uiText.setFont(new Font("Verdana", 1, 50));
+        uiText.setForeground(textColor);
+        uiTextSmall.setFont(new Font("Verdana", 1, 20));
+        uiTextSmall.setForeground(textColor);
+    }
 
+    private JComboBox createJComboBox(){
         jComboBox.setBounds(80, 59, 140, 20);
         jComboBox.setBackground(uiColor);
         jComboBox.setFont(new Font("Verdana", 1, 20));
@@ -44,22 +59,8 @@ public class Interface{
                 getSelection();
             }
         });
-
-        uiText.setFont(new Font("Verdana", 1, 50));
-        uiText.setForeground(textColor);
-        uiTextSmall.setFont(new Font("Verdana", 1, 20));
-        uiTextSmall.setForeground(textColor);
-        jFrame.add(createTextJPanel(uiText, uiTextSmall), BorderLayout.CENTER);
-        jFrame.add(createDropdownJPanel(jComboBox), BorderLayout.SOUTH);
-
-        jFrame.setSize(400,400);
-        jFrame.setLocationRelativeTo(null);
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFrame.setResizable(false);
-        jFrame.setVisible(true);
+        return  jComboBox;
     }
-
-
 
     private JPanel createTextJPanel(JLabel uiText, JLabel uiTextSmall){
         JPanel panel = new JPanel(new BorderLayout());
@@ -82,6 +83,21 @@ public class Interface{
         return panel;
     }
 
+    private void createJFrame(){
+        jFrame.getContentPane().setBackground(uiColor);
+        jFrame.setTitle("Time Converter " + version);
+
+        jFrame.add(createTextJPanel(uiText, uiTextSmall), BorderLayout.CENTER);
+        jFrame.add(createDropdownJPanel(jComboBox), BorderLayout.SOUTH);
+
+        jFrame.setSize(400,400);
+        jFrame.setLocationRelativeTo(null);
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.setResizable(false);
+        jFrame.setVisible(true);
+    }
+
+    //endregion
 
 
     public static String getSelection(){

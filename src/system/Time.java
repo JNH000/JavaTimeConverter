@@ -1,5 +1,6 @@
 package system;
 
+//region Imports
 import ui.Interface;
 
 import javax.swing.*;
@@ -11,6 +12,8 @@ import java.util.TimeZone;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
+//endregion
 
 public class Time{
 
