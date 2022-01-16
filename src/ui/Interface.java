@@ -3,10 +3,12 @@ package ui;
 //region Imports
 import system.Time;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 //endregion
 
@@ -36,10 +38,17 @@ public class Interface{
     public Interface(){
         createJComboBox();
         createText();
+        setIcon();
         createJFrame();
     }
 
     //region UI Setup
+
+    private void setIcon(){
+        URL iconURL = Interface.class.getClassLoader().getResource("img/Icon.png");
+        ImageIcon icon = new ImageIcon(iconURL);
+        jFrame.setIconImage(icon.getImage());
+    }
 
     private void createText(){
         uiText.setFont(new Font("Verdana", 1, 50));
